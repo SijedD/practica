@@ -34,12 +34,3 @@ console.log(createBook(info.title, info.year, info.author))
 
 
 
-// Выходные данные:
-// type targetData = {
-//   title: "Harry Potter",
-//   year: 1997,
-//   author: "J.K. Rowling",
-// 	preview: "Название: [title], Автор: [author], Год: [year]",
-// 	url: "www.someurl.com/preview?title=[title]&year=[year]&author=[author]"
-// };
-

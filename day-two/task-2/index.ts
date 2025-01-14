@@ -51,12 +51,3 @@ function convert (sourceData:SourseData) : targetData{
 
 console.log(convert(info))
 
-// Выходные данные:
-// const target: TargetData = {
-// id: "123",
-// name: "John Doe",
-// phone: "+123456789",
-// email: "john.doe@example.com",
-// location: "New York, 10001",
-// status: "active",
-// };
