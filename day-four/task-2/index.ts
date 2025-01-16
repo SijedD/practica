@@ -42,24 +42,13 @@ function groupUser(users: userWithGadget[]): userWithGadgets[]{
     // чтобы избежать дублирования пользователей
     const userMap = new Map<string, userWithGadgets>();
     for(const user of users){
-        const { id, name, gadget } = user;
-        if(userMap.has(id)){
-            userMap.get(id)!.gadgets.push({
-                id: gadget.id,
-                name: gadget.name,
-                price: gadget.price,
-            });
+        const { gadget, ...rest } = user;
+        if(userMap.has(rest.id)){
+            userMap.get(rest.id)!.gadgets.push(gadget);
         }else {
-            userMap.set(id, {
-                id,
-                name,
-                gadgets: [
-                    {
-                        id: gadget.id,
-                        name: gadget.name,
-                        price: gadget.price,
-                    },
-                ],
+            userMap.set(rest.id, {
+                ...rest,
+                gadgets: [{...gadget}],
             });
         }
 
